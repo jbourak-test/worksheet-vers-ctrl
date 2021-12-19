@@ -22,5 +22,12 @@ with `absences` on the X-axis and `G3` on the y-axis.
 Be sure to include a title and readable axis labels.
 
 ```{r}
-plot <- NULL
+plot <- students |> 
+  ggplot(mapping = aes(x = absences, y = G3)) +
+  geom_jitter(alpha = 0.5) +
+  ggtitle("Student Absences vs. Final Grade (%)") +
+  xlab("Number of absences") +
+  ylab("Final grade (%)")
+
+plot
 ```
