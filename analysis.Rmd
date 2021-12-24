@@ -14,7 +14,9 @@ Read in the data.
 Lastly, `select` only the `absences` column and the `G3` column.
 
 ```{r}
-students <- NULL
+students <- read_delim("student-mat.csv", delim = ";") |> 
+  mutate(G3 = (G3 / 20) * 100) |> 
+  select(absences, G3)
 ```
 
 Plot the relationship between `absences` and `G3` (final grade) as a scatter-plot,
